@@ -1,0 +1,33 @@
+{
+  "development": {
+    "username": "postgres",
+      "password": "1234",
+    "database": "tienda_online",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5433
+  },
+  "test": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "tienda_online",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5433
+  },
+  "production": {
+    "username": "postgres",
+    "password": "1234",
+    "database": "tienda_online",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": 5433,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
+  }
+}
+
