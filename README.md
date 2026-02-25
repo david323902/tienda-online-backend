@@ -1,83 +1,75 @@
-# Backend de Tienda Online (E-commerce)
+# Backend Tienda Online – API REST para E-commerce
 
-Backend para un sistema de **comercio electrónico**, diseñado bajo una
-arquitectura **MVC**, con autenticación segura, gestión de pedidos y
-procesamiento de pagos en línea.
+## 📌 Descripción
+Backend para una **tienda online (E-commerce)** desarrollado para gestionar productos, usuarios, carrito de compras, pedidos y pagos en línea.  
+El sistema está diseñado con una **arquitectura MVC**, priorizando seguridad, escalabilidad y consistencia de datos.
 
----
+## 🎯 Objetivo del Proyecto
+Crear una API robusta que permita:
+- Gestionar el flujo completo de compra
+- Integrar pagos en línea
+- Proteger la información de los usuarios
+- Mantener integridad en las transacciones
 
-## 🚀 Descripción del Proyecto
+## 🚀 Tecnologías Utilizadas
 
-Este proyecto implementa una **API RESTful** para una tienda online, encargada
-de la gestión de usuarios, productos, carrito de compras, pedidos y pagos,
-garantizando seguridad y consistencia de datos.
+### Backend
+- **Node.js** – Entorno de ejecución
+- **Express.js** – Framework para API REST
+- **PostgreSQL** – Base de datos relacional
+- **Sequelize** – ORM para modelado y consultas
+- **JWT (JSON Web Token)** – Autenticación segura
+- **Bcrypt** – Encriptación de contraseñas
+- **Express Validator** – Validación de datos
+- **Helmet** – Seguridad HTTP
+- **Express Rate Limit** – Protección contra ataques de fuerza bruta
+- **CORS** – Comunicación segura con frontend
+- **Dotenv** – Manejo de variables de entorno
 
----
-
-## 🧠 Arquitectura
-
-- **Backend:** Node.js + Express
-- **Base de Datos:** PostgreSQL
-- **ORM:** Sequelize
-- **Arquitectura:** MVC (Modelo–Vista–Controlador)
-
----
-
-## ⚙️ Tecnologías y Funcionalidad
-
-### Núcleo
-- **Node.js**
-- **Express**
-  - Rutas como `/api/products`, `/api/cart`, `/api/orders`
-
-### Base de Datos
-- **PostgreSQL**
-- **Sequelize**
-  - Modelado de entidades (User, Product, Order).
-  - Manejo de transacciones para pedidos.
-
-### Seguridad
-- **JWT:** Autenticación basada en tokens.
-- **bcrypt:** Hash seguro de contraseñas.
-- **Helmet:** Protección contra vulnerabilidades HTTP.
-- **Express Rate Limit:** Prevención de ataques de fuerza bruta.
-- **CORS:** Comunicación segura con el frontend.
-
-### Pagos
-- **PayPal SDK**
-  - Creación y captura de órdenes de pago.
-  - Integración directa con la API de PayPal.
-
-### Validaciones y Utilidades
-- **express-validator:** Validación de datos de entrada.
-- **dotenv:** Manejo de variables de entorno.
-- **multer:** Subida de imágenes de productos.
+### Pagos y Servicios
+- **PayPal SDK** – Procesamiento de pagos en línea
+- **Multer** – Subida de imágenes de productos
+- **Nodemailer** – Envío de correos (confirmaciones/notificaciones)
 
 ### Logging y Monitoreo
-- **Morgan:** Registro de peticiones HTTP.
-- **Winston:** Logging avanzado de errores y eventos.
+- **Morgan** – Registro de peticiones HTTP
+- **Winston** – Logging de errores y eventos críticos
 
-### Funcionalidades Adicionales
-- **Nodemailer:** Envío de correos (confirmación de pedidos).
-- Integración de notificaciones vía **WhatsApp**.
+## ⚙️ Funcionalidades Principales
+- Registro y autenticación de usuarios
+- Gestión de productos (CRUD)
+- Carrito de compras
+- Creación y gestión de pedidos
+- Integración de pagos con PayPal
+- Validación de datos y control de errores
+- Seguridad en rutas y transacciones
+- Subida de imágenes de productos
 
----
+## 🧠 Mi Rol en el Proyecto
+- Desarrollo completo del backend
+- Diseño de la arquitectura MVC
+- Modelado de base de datos relacional
+- Implementación de autenticación y seguridad
+- Integración de pagos con PayPal
+- Manejo de transacciones y consistencia de datos
+- Documentación y pruebas funcionales
 
-## 🎯 Funcionalidades Clave
+## 🧩 Arquitectura
+- **Rutas**: Definición de endpoints REST
+- **Controladores**: Lógica de negocio
+- **Modelos**: Estructura de datos y relaciones
+- **Middlewares**: Seguridad, validaciones y autenticación
 
-- Autenticación y autorización de usuarios.
-- Gestión de productos y carrito.
-- Creación segura de pedidos.
-- Pagos en línea con PayPal.
-- Subida de imágenes de productos.
-- Registro y monitoreo de errores.
+## 📌 Estado del Proyecto
+🟢 Funcional  
+🔧 En mantenimiento y mejoras
 
----
-
-## 🛠️ Estado del Proyecto
-🟢 Funcional / Backend robusto.
-
----
+## 📚 Aprendizajes Clave
+- Desarrollo backend para E-commerce
+- Seguridad en aplicaciones web
+- Manejo de pagos y transacciones
+- Modelado relacional con PostgreSQL
+- Buenas prácticas en APIs REST
 
 ## 👤 Autor
 
