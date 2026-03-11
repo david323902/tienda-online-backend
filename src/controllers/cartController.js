@@ -182,7 +182,7 @@ class CartController {
       }
 
       // Recalcular total del carrito
-      await this.recalculateCartTotal(cart.id_carrito);
+      await CartController.recalculateCartTotal(cart.id_carrito);
 
       // Obtener carrito actualizado
       const updatedCart = await Cart.findByPk(cart.id_carrito, {
@@ -277,7 +277,7 @@ class CartController {
       await cartItem.save();
 
       // Recalcular total del carrito
-      await this.recalculateCartTotal(cartItem.Cart.id_carrito);
+      await CartController.recalculateCartTotal(cartItem.Cart.id_carrito);
 
       res.json({
         success: true,
@@ -331,7 +331,7 @@ class CartController {
       await cartItem.destroy();
 
       // Recalcular total del carrito
-      await this.recalculateCartTotal(cartId);
+      await CartController.recalculateCartTotal(cartId);
 
       res.json({
         success: true,

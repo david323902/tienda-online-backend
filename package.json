@@ -29,6 +29,7 @@
     "pg": "^8.11.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.0.0",
+    "stripe": "^20.4.0",
     "winston": "^3.10.0"
   },
   "devDependencies": {

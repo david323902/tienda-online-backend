@@ -39,6 +39,7 @@ class AuthController {
         token
       });
     } catch (error) {
+            console.error('ERROR REGISTER:', error);
       res.status(500).json({ error: error.message });
     }
   }

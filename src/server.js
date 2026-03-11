@@ -23,10 +23,10 @@ app.use(helmet());
 
 // Limita las peticiones para prevenir ataques de fuerza bruta
 const limiter = rateLimit({
-	windowMs: 15 * 60 * 1000, // 15 minutos
-	max: 100, // Limita cada IP a 100 peticiones por ventana
-	standardHeaders: true,
-	legacyHeaders: false, 
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  max: 100, // Limita cada IP a 100 peticiones por ventana
+  standardHeaders: true,
+  legacyHeaders: false,
   message: 'Demasiadas peticiones desde esta IP, por favor intenta de nuevo en 15 minutos.'
 });
 app.use('/api', limiter); // Aplicar a todas las rutas de la API
@@ -55,6 +55,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const paypalRoutes = require('./routes/paypalRoutes');
 const whatsappRoutes = require('./routes/whatsappRoutes');
+const stripeRoutes = require('./routes/stripeRoutes');
 
 // Usar rutas
 app.use('/api/auth', authRoutes);
@@ -64,6 +65,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/paypal', paypalRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
+app.use('/api/stripe', stripeRoutes);
 
 // Health Check Endpoint
 app.get('/api/health', (req, res) => {
