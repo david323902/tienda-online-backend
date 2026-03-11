@@ -24,6 +24,10 @@ export default function Navbar() {
 
                 <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
                     <a href="/#inicio" className={isActive('/#inicio')} onClick={() => setMenuOpen(false)}>Inicio</a>
+<<<<<<< HEAD
+=======
+                    <Link to="/productos" className={isActive('/productos')} onClick={() => setMenuOpen(false)}>Tienda</Link>
+>>>>>>> 3bf4bb509db8e122835b72127a4523ee94055e5b
                     <a href="/#servicios" className={isActive('/#servicios')} onClick={() => setMenuOpen(false)}>Servicios</a>
                     <a href="/#esencia" className={isActive('/#esencia')} onClick={() => setMenuOpen(false)}>Nuestra Esencia</a>
                     <a href="/#proyectos" className={isActive('/#proyectos')} onClick={() => setMenuOpen(false)}>Proyectos</a>

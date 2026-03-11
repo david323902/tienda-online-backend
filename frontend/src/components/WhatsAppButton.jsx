@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { whatsappAPI } from '../api/apiClient';
 
+<<<<<<< HEAD
 // Es una buena práctica usar variables de entorno para valores de fallback.
 // Puedes definirlas en un archivo .env en la raíz de tu proyecto de frontend.
 // VITE_FALLBACK_WHATSAPP_NUMBER=+573014367948
@@ -41,6 +42,30 @@ export default function WhatsAppButton() {
     
     // La URL de WhatsApp no debe llevar el '+', por eso se reemplaza aquí.
     const url = `https://wa.me/${phone.replace('+', '')}?text=${message}`;
+=======
+export default function WhatsAppButton() {
+    const [info, setInfo] = useState(null);
+
+    useEffect(() => {
+        whatsappAPI.getContactInfo()
+            .then(res => setInfo(res.data))
+            .catch(() => {
+                // Default fallback for InterConectadosWeb
+                setInfo({
+                    phone: '+573014367948',
+                    message: 'Hola, me encantaría recibir más información sobre sus servicios de desarrollo web.'
+                });
+            });
+    }, []);
+
+    if (!info) return null;
+
+    // Use specific landing page info by default if backend doesn't provide it
+    const phone = ((info.phone?.includes('573014367948') ? info.phone : '+573014367948') || '').replace(/[^0-9]/g, '');
+    const defaultMsg = 'Hola, me encantaría recibir asesoría para mi proyecto web.';
+    const message = encodeURIComponent(defaultMsg);
+    const url = `https://wa.me/${phone}?text=${message}`;
+>>>>>>> 3bf4bb509db8e122835b72127a4523ee94055e5b
 
     return (
         <a
