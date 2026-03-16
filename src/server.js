@@ -32,9 +32,14 @@ const limiter = rateLimit({
 app.use('/api', limiter); // Aplicar a todas las rutas de la API
 
 // Configuración de CORS desde variables de entorno
+const allowedOrigins = [
+ "http://localhost:5173",
+ "https://tienda-online-frontend.onrender.com"
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN.split(',') : '*',
-  credentials: true
+ origin: allowedOrigins,
+ credentials: true
 }));
 
 // --- Middlewares Generales ---
