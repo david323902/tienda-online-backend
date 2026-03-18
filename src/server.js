@@ -32,13 +32,19 @@ const limiter = rateLimit({
 app.use('/api', limiter); // Aplicar a todas las rutas de la API
 
 // Configuración de CORS desde variables de entorno
-const allowedOrigins = [
- "http://localhost:5173",
- "https://tienda-online-frontend.onrender.com"
-];
+const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS 
+  ? process.env.CORS_ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
+  : ['http://localhost:5173', 'http://localhost:3000'];
 
 app.use(cors({
- origin: allowedOrigins,
+ origin: function (origin, callback) {
+   // Permitir solicitudes sin origen (como apps móviles o curl) o si el origen está en la lista
+   if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+     callback(null, true);
+   } else {
+     callback(new Error('No permitido por CORS'));
+   }
+ },
  credentials: true
 }));
 
